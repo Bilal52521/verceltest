@@ -1,14 +1,11 @@
 const express = require("express");
-
-const PORT = 5000;
 const app = express();
-app.use(express.json());
+const PORT = process.env.PORT || 3000;
 
-// Test Routes
 app.get("/", (req, res) => {
-  res.send("Welcome Home");
+  res.send("Hello, Vercel!");
 });
 
 app.listen(PORT, () => {
-  console.log(`Server is running on http://localhost:${PORT}`);
+  console.log(`Server running on port ${PORT}`);
 });
